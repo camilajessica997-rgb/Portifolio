@@ -1,0 +1,2449 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jessica Camila | Desenvolvedora Front-end</title>
+
+    <meta
+        name="description"
+        content="Portfólio profissional de Jessica Camila, desenvolvedora Front-end e estudante de Sistemas de Informação."
+    >
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           VARIÁVEIS DE CORES
+        ====================================================== */
+
+        :root {
+
+            --bg: #FFFFFF;
+
+            --bg-soft: #F5F8F3;
+
+            --card: #FFFFFF;
+
+            --card-soft: #F1F5EF;
+
+            --primary: #166534;
+
+            --primary-dark: #14532D;
+
+            --verde-escuro: #14532D;
+
+            --verde: #166534;
+
+            --verde-medio: #3F7D5A;
+
+            --salvia: #A3B18A;
+
+            --salvia-claro: #C7D5B8;
+
+            --salvia-soft: #E4EBDD;
+
+            --salvia-bg: #F0F4EC;
+
+            --text: #243127;
+
+            --text-dark: #17251C;
+
+            --muted: #66736A;
+
+            --border: #DCE5D8;
+
+            --shadow:
+                0 15px 40px rgba(20, 83, 45, .10);
+
+            --shadow-hover:
+                0 20px 50px rgba(20, 83, 45, .16);
+
+            --radius: 22px;
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: "Inter", sans-serif;
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.6;
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        img {
+
+            max-width: 100%;
+
+            display: block;
+        }
+
+
+        button {
+
+            font-family: inherit;
+        }
+
+
+        .container {
+
+            width: min(1120px, 92%);
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, .95);
+
+            backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .nav-content {
+
+            min-height: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+
+            font-size: 1.18rem;
+
+            font-weight: 800;
+
+            letter-spacing: -.5px;
+
+            color: var(--text-dark);
+        }
+
+
+        .logo span {
+
+            color: var(--primary);
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+
+            list-style: none;
+
+            color: var(--muted);
+
+            font-size: .90rem;
+
+            font-weight: 500;
+        }
+
+
+        .nav-links a {
+
+            position: relative;
+
+            transition: .25s;
+        }
+
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 2px;
+
+            border-radius: 10px;
+
+            background: var(--primary);
+
+            transition: .25s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--primary);
+        }
+
+
+        .nav-links a:hover::after {
+
+            width: 100%;
+        }
+
+
+        .menu-btn {
+
+            display: none;
+
+            border: 0;
+
+            background: transparent;
+
+            color: var(--primary);
+
+            font-size: 1.7rem;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 125px 0 80px;
+
+            background:
+
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(63, 125, 90, .13),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(163, 177, 138, .18),
+                    transparent 30%
+                );
+        }
+
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns: 1.15fr .85fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .tag {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 14px;
+
+            border: 1px solid #C8D8C3;
+
+            border-radius: 999px;
+
+            background: #F0F5ED;
+
+            color: var(--primary);
+
+            font-size: .80rem;
+
+            font-weight: 700;
+
+            margin-bottom: 22px;
+        }
+
+
+        .dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--primary);
+
+            box-shadow:
+                0 0 10px rgba(22, 101, 52, .45);
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(2.7rem, 6vw, 5rem);
+
+            line-height: 1.03;
+
+            letter-spacing: -3px;
+
+            color: var(--text-dark);
+
+            margin-bottom: 22px;
+        }
+
+
+        .hero h1 span {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #14532D,
+                    #3F7D5A,
+                    #166534
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+        }
+
+
+        .hero p {
+
+            max-width: 650px;
+
+            color: var(--muted);
+
+            font-size: 1.05rem;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           BOTÕES
+        ====================================================== */
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 13px;
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 13px 19px;
+
+            border-radius: 12px;
+
+            border: 1px solid var(--border);
+
+            font-weight: 700;
+
+            font-size: .88rem;
+
+            transition: .25s;
+
+            cursor: pointer;
+        }
+
+
+        .btn-primary {
+
+            color: #FFFFFF;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #166534,
+                    #14532D
+                );
+
+            border-color: #166534;
+
+            box-shadow:
+                0 10px 25px rgba(20, 83, 45, .18);
+        }
+
+
+        .btn-primary:hover {
+
+            color: #FFFFFF;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 30px rgba(20, 83, 45, .25);
+        }
+
+
+        .btn-outline {
+
+            background: #FFFFFF;
+
+            color: var(--text-dark);
+        }
+
+
+        .btn-outline:hover {
+
+            color: var(--primary);
+
+            border-color: var(--salvia);
+
+            background: var(--salvia-soft);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           CARD PERFIL
+        ====================================================== */
+
+        .profile-card {
+
+            position: relative;
+
+            padding: 32px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 30px;
+
+            background: #FFFFFF;
+
+            box-shadow: var(--shadow);
+
+            overflow: hidden;
+
+            transition: .3s;
+        }
+
+
+        .profile-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: var(--shadow-hover);
+        }
+
+
+        .profile-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+
+            height: 190px;
+
+            background: rgba(63, 125, 90, .11);
+
+            border-radius: 50%;
+
+            filter: blur(5px);
+
+            top: -90px;
+
+            right: -60px;
+        }
+
+
+        .profile-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+
+            height: 130px;
+
+            background: rgba(163, 177, 138, .16);
+
+            border-radius: 50%;
+
+            filter: blur(10px);
+
+            bottom: -60px;
+
+            left: -40px;
+        }
+
+
+        .avatar {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 96px;
+
+            height: 96px;
+
+            border-radius: 26px;
+
+            display: grid;
+
+            place-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #3F7D5A,
+                    #14532D
+                );
+
+            color: #FFFFFF;
+
+            font-size: 2rem;
+
+            font-weight: 800;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 12px 30px rgba(20, 83, 45, .20);
+        }
+
+
+        .profile-card h3 {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 1.4rem;
+
+            color: var(--text-dark);
+
+            margin-bottom: 7px;
+        }
+
+
+        .profile-card > p {
+
+            position: relative;
+
+            z-index: 2;
+
+            color: var(--muted);
+
+            margin-bottom: 25px;
+        }
+
+
+        .mini-info {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+
+        .mini-info div {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 12px;
+
+            background: #F8FAF7;
+
+            border: 1px solid var(--border);
+
+            border-radius: 13px;
+
+            color: var(--muted);
+
+            font-size: .84rem;
+
+            transition: .25s;
+        }
+
+
+        .mini-info div:hover {
+
+            border-color: #B7C9AE;
+
+            background: #F0F5ED;
+
+            transform: translateX(4px);
+        }
+
+
+        .mini-info i {
+
+            color: var(--primary);
+
+            font-size: 1rem;
+        }
+
+
+        /* =====================================================
+           SEÇÕES
+        ====================================================== */
+
+        section {
+
+            padding: 100px 0;
+        }
+
+
+        .section-title {
+
+            margin-bottom: 45px;
+        }
+
+
+        .eyebrow {
+
+            color: var(--primary);
+
+            font-size: .78rem;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 9px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: clamp(2rem, 4vw, 3rem);
+
+            color: var(--text-dark);
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .section-title p {
+
+            color: var(--muted);
+
+            max-width: 650px;
+        }
+
+
+        /* =====================================================
+           SOBRE
+        ====================================================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: .85fr 1.15fr;
+
+            gap: 55px;
+
+            align-items: center;
+        }
+
+
+        .about-box {
+
+            padding: 32px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #FFFFFF,
+                    #F5F8F3
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .about-box h3 {
+
+            color: var(--text-dark);
+
+            margin-bottom: 12px;
+        }
+
+
+        .about-box p {
+
+            color: var(--muted);
+        }
+
+
+        .about-text p {
+
+            color: var(--muted);
+
+            margin-bottom: 17px;
+        }
+
+
+        .about-text strong {
+
+            color: var(--primary);
+        }
+
+
+        /* =====================================================
+           HABILIDADES
+        ====================================================== */
+
+        .skills {
+
+            background: #F5F8F3;
+        }
+
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .skill {
+
+            padding: 23px;
+
+            border-radius: 18px;
+
+            background: #FFFFFF;
+
+            border: 1px solid var(--border);
+
+            transition: .25s;
+        }
+
+
+        .skill:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #B8C9AF;
+
+            box-shadow:
+                0 15px 35px rgba(20, 83, 45, .10);
+        }
+
+
+        .skill i {
+
+            color: var(--primary);
+
+            font-size: 1.7rem;
+        }
+
+
+        .skill h3 {
+
+            color: var(--text-dark);
+
+            font-size: 1rem;
+
+            margin: 13px 0 5px;
+        }
+
+
+        .skill p {
+
+            color: var(--muted);
+
+            font-size: .82rem;
+        }
+
+
+        /* =====================================================
+           PROJETOS
+        ====================================================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
+            border-color: #B8C9AF;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-image {
+            position: relative;
+            width: 100%;
+            height: 245px;
+            overflow: hidden;
+            background: #EEF4EB;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform .5s ease;
+        }
+
+        .project:hover .project-image img {
+            transform: scale(1.035);
+        }
+
+        .project-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(20,83,45,.10), transparent 45%);
+            pointer-events: none;
+        }
+
+        .project-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 25px;
+        }
+
+        .project-body h3 {
+            color: var(--text-dark);
+            font-size: 1.22rem;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .project-body p {
+            color: var(--muted);
+            font-size: .88rem;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: auto;
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            padding: 6px 10px;
+            border-radius: 7px;
+            background: #EEF4EB;
+            color: var(--primary-dark);
+            border: 1px solid #D4E0CF;
+            font-size: .70rem;
+            font-weight: 600;
+        }
+
+        .project-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding-top: 2px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: .84rem;
+            transition: .25s;
+        }
+
+        .project-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(2px);
+        }
+
+        .project-link.primary {
+            padding: 9px 14px;
+            border-radius: 9px;
+            color: #FFFFFF;
+            background: var(--primary);
+        }
+
+        .project-link.primary:hover {
+            color: #FFFFFF;
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .project-placeholder {
+            height: 245px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(63,125,90,.18), transparent 32%),
+                linear-gradient(135deg, #F1F5EE, #E2EBDD);
+        }
+
+        .project-placeholder-icon {
+            width: 64px;
+            height: 64px;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            background: #FFFFFF;
+            color: var(--primary);
+            border: 1px solid #D4E0CF;
+            box-shadow: 0 10px 25px rgba(20,83,45,.10);
+            font-size: 1.6rem;
+        }
+
+        /* =====================================================
+           FORMAÇÃO
+        ====================================================== */
+
+        .timeline {
+
+            position: relative;
+
+            max-width: 850px;
+        }
+
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 9px;
+
+            top: 7px;
+
+            bottom: 7px;
+
+            width: 1px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #166534,
+                    #C7D5B8
+                );
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            padding-left: 42px;
+
+            margin-bottom: 35px;
+        }
+
+
+        .timeline-dot {
+
+            position: absolute;
+
+            left: 0;
+
+            top: 5px;
+
+            width: 19px;
+
+            height: 19px;
+
+            border-radius: 50%;
+
+            background: #166534;
+
+            border: 5px solid #FFFFFF;
+
+            box-shadow:
+                0 0 0 1px #A3B18A,
+                0 0 18px rgba(22, 101, 52, .20);
+        }
+
+
+        .timeline-item h3 {
+
+            color: var(--text-dark);
+
+            font-size: 1.05rem;
+        }
+
+
+        .timeline-item span:not(.timeline-dot) {
+
+            color: var(--primary);
+
+            font-size: .82rem;
+
+            font-weight: 700;
+        }
+
+
+        .timeline-item p {
+
+            color: var(--muted);
+
+            font-size: .88rem;
+
+            margin-top: 5px;
+        }
+
+
+        /* =====================================================
+           CONTATO
+        ====================================================== */
+
+        .contact {
+
+            background: #F5F8F3;
+        }
+
+
+        .contact-box {
+
+            text-align: center;
+
+            max-width: 760px;
+
+            margin: auto;
+
+            padding: 55px 30px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 30px;
+
+            background: #FFFFFF;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .contact-box h2 {
+
+            font-size: clamp(2rem, 5vw, 3.2rem);
+
+            color: var(--text-dark);
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .contact-box p {
+
+            color: var(--muted);
+
+            margin-bottom: 28px;
+        }
+
+
+        .socials {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 22px;
+        }
+
+
+        .social {
+
+            width: 44px;
+
+            height: 44px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 12px;
+
+            border: 1px solid var(--border);
+
+            color: var(--muted);
+
+            transition: .25s;
+
+            background: #FFFFFF;
+        }
+
+
+        .social:hover {
+
+            color: var(--primary);
+
+            border-color: #B8C9AF;
+
+            background: var(--salvia-soft);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            padding: 25px 0;
+
+            background: #FFFFFF;
+
+            border-top: 1px solid var(--border);
+
+            color: #788279;
+
+            font-size: .80rem;
+        }
+
+
+        .footer-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+
+        /* =====================================================
+           ANIMAÇÃO
+        ====================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition: .7s ease;
+        }
+
+
+        .reveal.show {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .hero-grid,
+            .about-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .skills-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .hero {
+
+                padding-top: 130px;
+            }
+
+        }
+
+
+        @media (max-width: 680px) {
+
+            .project-image,
+            .project-placeholder {
+                height: 200px;
+            }
+
+            .project-body {
+                padding: 21px;
+            }
+
+            .project-actions {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 76px;
+
+                left: 0;
+
+                width: 100%;
+
+                padding: 20px 5%;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 18px;
+
+                background: rgba(255, 255, 255, .98);
+
+                border-bottom: 1px solid var(--border);
+
+                display: none;
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+
+            .menu-btn {
+
+                display: block;
+            }
+
+
+            .skills-grid,
+            .projects-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero h1 {
+
+                letter-spacing: -2px;
+            }
+
+
+            section {
+
+                padding: 75px 0;
+            }
+
+
+            .footer-content {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-content">
+
+            <a href="#inicio" class="logo">
+                Jessica
+
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Abrir menu">
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#inicio">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#sobre">
+                        Sobre
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#habilidades">
+                        Habilidades
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projetos">
+                        Projetos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#formacao">
+                        Formação
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contato">
+                        Contato
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             INÍCIO
+        ================================================== -->
+
+        <section class="hero" id="inicio">
+
+            <div class="container hero-grid">
+
+
+                <div class="reveal">
+
+                   
+
+
+                    <h1>
+
+                        Olá, eu sou<br>
+
+                        <span>
+                            Jessica Camila
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Desenvolvedora Front-end em formação,
+                        apaixonada por tecnologia, interfaces modernas
+                        e soluções web que unem funcionalidade,
+                        organização e uma boa experiência para o usuário.
+
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="#projetos"
+                            class="btn btn-primary">
+
+                            <i class="bi bi-grid-3x3-gap"></i>
+
+                            Ver meus projetos
+
+                        </a>
+
+
+                        <a
+                            href="#contato"
+                            class="btn btn-outline">
+
+                            <i class="bi bi-chat-dots"></i>
+
+                            Entre em contato
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD DO PERFIL -->
+
+                <div class="profile-card reveal">
+
+                    <div class="avatar">
+                        JC
+                    </div>
+
+
+                    <h3>
+                        Desenvolvedora Front-end
+                    </h3>
+
+
+                    <p>
+                        Sistemas de Informação · Web · Banco de Dados
+                    </p>
+
+
+                    <div class="mini-info">
+
+
+                        <div>
+
+                            <i class="bi bi-code-slash"></i>
+
+                            HTML · CSS · JavaScript
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-bootstrap"></i>
+
+                            Bootstrap · Interfaces responsivas
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-database"></i>
+
+                            MySQL · Modelagem de dados
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-lightning-charge"></i>
+
+                            Em evolução para React
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SOBRE
+        ================================================== -->
+
+        <section id="sobre">
+
+            <div class="container">
+
+
+                <div class="section-title reveal">
+
+                    <div class="eyebrow">
+                        Sobre mim
+                    </div>
+
+
+                    <h2>
+                        Construindo soluções com tecnologia.
+                    </h2>
+
+
+                    <p>
+
+                        Uma apresentação profissional que mostra
+                        minha formação, meus projetos e minha
+                        evolução na área de desenvolvimento web.
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+
+                    <div class="about-box reveal">
+
+                        <h3>
+                            Meu foco profissional
+                        </h3>
+
+
+                        <p>
+
+                            Desenvolvimento Front-end, criação de
+                            interfaces web, experiência do usuário
+                            e integração com dados.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-text reveal">
+
+                       <p>
+    Sou estudante de <strong>Sistemas de Informação</strong> e <strong>Tecnóloga em Redes de Computadores</strong>, com interesse em <strong>desenvolvimento web, banco de dados e tecnologia</strong>. Minha formação em redes e infraestrutura proporciona uma base sólida para compreender diferentes áreas da computação. Busco constantemente aprimorar meus conhecimentos e transformar ideias em <strong>soluções modernas, funcionais e eficientes</strong>, unindo conhecimento técnico, criatividade e aprendizado contínuo.
+</p>
+
+
+
+                        <p>
+
+                            Durante minha formação, venho desenvolvendo
+                            projetos que envolvem interfaces responsivas,
+                            sistemas web, autenticação, organização de
+                            informações e integração com bancos de dados.
+
+                        </p>
+
+
+                        <p>
+
+                            Meu objetivo é continuar evoluindo como
+                            profissional de tecnologia, aprofundando
+                            meus conhecimentos em
+                            <strong>
+                                Front-end, React e desenvolvimento
+                                de aplicações web
+                            </strong>.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HABILIDADES
+        ================================================== -->
+
+        <section
+            class="skills"
+            id="habilidades">
+
+            <div class="container">
+
+
+                <div class="section-title reveal">
+
+                    <div class="eyebrow">
+                        Tecnologias
+                    </div>
+
+
+                    <h2>
+                        Habilidades
+                    </h2>
+
+
+                    <p>
+
+                        Tecnologias que fazem parte da minha formação
+                        e dos projetos que venho desenvolvendo.
+
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <div class="skill reveal">
+
+                        <i class="bi bi-filetype-html"></i>
+
+                        <h3>
+                            HTML5
+                        </h3>
+
+                        <p>
+                            Estruturação semântica e acessível
+                            de páginas web.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <i class="bi bi-filetype-css"></i>
+
+                        <h3>
+                            CSS3
+                        </h3>
+
+                        <p>
+                            Layouts, responsividade, animações
+                            e interfaces modernas.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <i class="bi bi-filetype-js"></i>
+
+                        <h3>
+                            JavaScript
+                        </h3>
+
+                        <p>
+                            Interatividade e lógica para
+                            aplicações web.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <i class="bi bi-bootstrap"></i>
+
+                        <h3>
+                            Bootstrap
+                        </h3>
+
+                        <p>
+                            Interfaces responsivas e componentes
+                            reutilizáveis.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <i class="bi bi-database"></i>
+
+                        <h3>
+                            MySQL
+                        </h3>
+
+                        <p>
+                            Banco de dados relacional e
+                            consultas SQL.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <i class="bi bi-filetype-py"></i>
+
+                        <h3>
+                            Python
+                        </h3>
+
+                        <p>
+                            Desenvolvimento de aplicações
+                            web com Flask.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <i class="bi bi-git"></i>
+
+                        <h3>
+                            Git
+                        </h3>
+
+                        <p>
+                            Controle de versão e organização
+                            de projetos.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill reveal">
+
+                        <i class="bi bi-braces"></i>
+
+                        <h3>
+                            React
+                        </h3>
+
+                        <p>
+                            Próximo foco de especialização
+                            em Front-end.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+           
+       
+             PROJETOS
+        ================================================== -->
+
+        <section id="projetos">
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <div class="eyebrow">Portfólio</div>
+
+                    <h2>Projetos selecionados</h2>
+
+                    <p>
+                        Projetos acadêmicos e práticos que representam
+                        minha experiência com desenvolvimento web,
+                        banco de dados e resolução de problemas.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- SISTEMA DE CARGA DOCENTE -->
+                    <article class="project reveal">
+
+                        <div class="project-image">
+                            <img
+                                src="imagens/Apresentação sem título (2).png"
+                                alt="Tela do Sistema de Carga Docente"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="project-body">
+                            <h3>Sistema de Carga Docente</h3>
+
+                            <p>
+                                Sistema web desenvolvido para o IFMT Campus
+                                Pontes e Lacerda para organizar e analisar
+                                dados dos Planos Individuais de Trabalho
+                                (PITs), auxiliando na identificação de
+                                possíveis excessos de carga horária.
+                            </p>
+
+                            <div class="tags">
+                                <span>Python</span>
+                                <span>Flask</span>
+                                <span>MySQL</span>
+                                <span>Bootstrap</span>
+                                <span>JavaScript</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <a
+                                    href="https://github.com/camilajessica997-rgb"
+                                    class="project-link primary"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Ver 
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </a>
+
+                                <a
+                                    href="https://github.com/camilajessica997-rgb"
+                                    class="project-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    GitHub
+                                    <i class="bi bi-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ECO CIDADÃO -->
+                    <article class="project reveal">
+
+                        <div class="project-image">
+                            <img
+                                src="imagens/ecocidadao.png"
+                                alt="Tela do projeto Eco Cidadão"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="project-body">
+                            <h3>Eco Cidadão</h3>
+
+                            <p>
+                                Plataforma web voltada à participação cidadã
+                                em Pontes e Lacerda - MT, permitindo o registro
+                                anônimo e o encaminhamento de ocorrências
+                                ambientais urbanas.
+                            </p>
+
+                            <div class="tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Bootstrap</span>
+                                <span>Geolocalização</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <a
+                                    href="https://github.com/camilajessica997-rgb"
+                                    class="project-link primary"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Ver projeto
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </a>
+
+                                <a
+                                    href="https://github.com/camilajessica997-rgb"
+                                    class="project-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    GitHub
+                                    <i class="bi bi-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PORTFÓLIO PROFISSIONAL -->
+                    <article class="project reveal">
+
+                        <div class="project-placeholder">
+                            <div class="project-placeholder-icon">
+                                <i class="bi bi-person-badge"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3>Portfólio Profissional</h3>
+
+                            <p>
+                                Site pessoal responsivo criado para apresentar
+                                minha formação, habilidades, projetos e evolução
+                                profissional na área de desenvolvimento web.
+                            </p>
+
+                            <div class="tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Responsive Design</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <a href="#inicio" class="project-link primary">
+                                    Projeto atual
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PRÓXIMO PROJETO -->
+                    <article class="project reveal">
+
+                        <div class="project-placeholder">
+                            <div class="project-placeholder-icon">
+                                <i class="bi bi-code-square"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3>Próximo projeto</h3>
+
+                            <p>
+                                Espaço reservado para um novo projeto com React,
+                                ampliando meu portfólio e minhas habilidades em
+                                aplicações web modernas.
+                            </p>
+
+                            <div class="tags">
+                                <span>React</span>
+                                <span>JavaScript</span>
+                                <span>API</span>
+                                <span>Front-end</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <a href="#contato" class="project-link">
+                                    Em desenvolvimento
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================
+             FORMAÇÃO
+        ================================================== -->
+
+        <section id="formacao">
+
+            <div class="container">
+
+
+                <div class="section-title reveal">
+
+                    <div class="eyebrow">
+                        Trajetória
+                    </div>
+
+
+                    <h2>
+                        Formação acadêmica
+                    </h2>
+
+
+                    <p>
+
+                        Minha formação e os conhecimentos que estou
+                        construindo para atuar profissionalmente
+                        em tecnologia.
+
+                    </p>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+<div class="timeline-item reveal">
+
+    <span class="timeline-dot"></span>
+
+    <span>
+        2022
+    </span>
+
+    <h3>
+        Tecnologia em Redes de Computadores
+    </h3>
+
+    <p>
+
+        Formação superior voltada para redes de computadores,
+        infraestrutura de tecnologia da informação, sistemas
+        operacionais, segurança e administração de redes.
+
+    </p>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+    <span class="timeline-dot"></span>
+
+    <span>
+        2026
+    </span>
+
+    <h3>
+       Bacharelado em  Sistemas de Informação
+    </h3>
+
+    <p>
+
+        
+    Graduação em andamento, com foco em programação,
+    banco de dados, desenvolvimento de sistemas
+    e tecnologia da informação.
+</p>
+
+
+    </p>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+    <span class="timeline-dot"></span>
+
+    <span>
+        Projetos acadêmicos
+    </span>
+
+    <h3>
+        Desenvolvimento Web e Banco de Dados
+    </h3>
+
+    <p>
+
+        Desenvolvimento de sistemas web utilizando
+        Python, Flask, MySQL, HTML, CSS, JavaScript
+        e Bootstrap.
+
+    </p>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+    <span class="timeline-dot"></span>
+
+    <span>
+        Próximo passo
+    </span>
+
+    <h3>
+        Especialização em Front-end
+    </h3>
+
+    <p>
+
+        Aprofundamento em JavaScript, React,
+        consumo de APIs, componentização e
+        boas práticas de desenvolvimento.
+
+    </p>
+
+</div>
+
+
+</div>
+
+
+        <!-- =================================================
+             CONTATO
+        ================================================== -->
+<section
+    class="contact"
+    id="contato">
+
+<div class="container">
+
+    <div class="contact-box reveal">
+
+        <div class="eyebrow">
+            Contato
+        </div>
+
+        <h2>
+            Vamos conversar?
+        </h2>
+
+        <p>
+            Estou aberta a oportunidades, projetos e
+            conexões profissionais na área de tecnologia.
+        </p>
+
+        <div
+            class="buttons"
+            style="justify-content:center;">
+
+            <!-- E-mail -->
+            <a
+            
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=j.camila@estudante.ifmt.edu.br&su=Contato%20profissional"
+    class="btn btn-primary"
+    target="_blank">
+
+    <i class="bi bi-envelope"></i>
+
+    Enviar e-mail
+
+</a>
+
+
+            <!-- LinkedIn -->
+            <a
+                href="https://www.linkedin.com/in/jessica-camila-738a96334/"
+                class="btn btn-outline"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <i class="bi bi-linkedin"></i>
+
+                LinkedIn
+
+            </a>
+
+
+            <!-- GitHub -->
+            <a
+                href="https://github.com/camilajessica997-rgb"
+                class="btn btn-outline"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <i class="bi bi-github"></i>
+
+                GitHub
+
+            </a>
+
+        </div>
+
+
+        <div class="socials">
+
+            <!-- LinkedIn -->
+            <a
+                href="https://www.linkedin.com/in/jessica-camila-738a96334/"
+                class="social"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn">
+
+                <i class="bi bi-linkedin"></i>
+
+            </a>
+
+
+            <!-- GitHub -->
+            <a
+                href="https://github.com/camilajessica997-rgb"
+                class="social"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub">
+
+                <i class="bi bi-github"></i>
+
+            </a>
+
+
+            <!-- E-mail -->
+            <a
+                href="mailto:j.camila@estudante.ifmt.edu.br"
+                class="social"
+                aria-label="E-mail">
+
+                <i class="bi bi-envelope"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+</main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <span>
+
+                ©
+                <span id="year"></span>
+                Jessica Camila.
+                Todos os direitos reservados.
+
+            </span>
+
+
+            <span>
+
+                Desenvolvido com HTML, CSS e JavaScript.
+
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =================================================
+           MENU MOBILE
+        ================================================= */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener(
+            "click",
+            () => {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        /* =================================================
+           FECHAR MENU AO CLICAR
+        ================================================= */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navLinks.classList.remove("active");
+
+                    }
+                );
+
+            });
+
+
+        /* =================================================
+           ANIMAÇÃO AO ROLAR
+        ================================================= */
+
+        const observer =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("show");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        document
+            .querySelectorAll(".reveal")
+            .forEach(element => {
+
+                observer.observe(element);
+
+            });
+
+
+        /* =================================================
+           ANO AUTOMÁTICO
+        ================================================= */
+
+        document
+            .getElementById("year")
+            .textContent =
+            new Date().getFullYear();
+
+
+    </script>
+
+</body>
+
+</html>
+
